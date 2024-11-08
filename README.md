@@ -23,6 +23,7 @@ sudo apt install build-essential libboost-all-dev
 To build binaries, execute commands from the root of source directory:
 ```
 mkdir build
+cd build
 cmake ..
 make -j8
 ```
