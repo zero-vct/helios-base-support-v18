@@ -1,4 +1,4 @@
-# HELIOS Base
+# Modified By HELIOS Base 
 [![GitHub license](https://img.shields.io/github/license/helios-base/helios-base)](https://github.com/helios-base/helios-base/blob/master/LISENCE)
 
 helios-base is a sample team for the RoboCup Soccer 2D Simulator.
@@ -6,6 +6,8 @@ All programs can work with rcssserver-16.
 
 - The RoboCup Soccer Simulator: http://github.com/rcsoccersim/
 - RoboCup Official Homepage: http://www.robocup.org/
+
+这个仓库修改自helios-base，将librcsc v18和helios-base v18版本结合，不需要事先本地部署librcsc，只需要使用cmake工具进行部署，就可以生成球队可执行文件。
 
 ## Quick Start
 
@@ -18,32 +20,17 @@ In the case of Ubuntu 16.04 or later, execute the following commands for install
 sudo apt update
 sudo apt install build-essential libboost-all-dev
 ```
-And, install librcsc.
-
 To build binaries, execute commands from the root of source directory:
 ```
-./bootstrap
-./configure
-make
+mkdir build
+cmake ..
+make -j8
 ```
 
-To start the agent2d team, invoke the start script in `src` directory.
+To start the agent2d team, invoke the start script in `build/helios_base` directory.
 ```
 ./start.sh
 ```
-
-## Configuring
-
-You may need to configure the build settings if you installed librcsc to an unusual location. 
-You can specify the installed location of librcsc by using `--with-librcsc` option as follows:
-```
-./configure --with-librcsc=/path/to/librcsc
-```
-Usually, this value is the same as `--prefix` option of configuring librcsc.
-You may also need to set the environment variable `LD_LIBRARY_PATH`.
-
-See `./configure --help` for others options.
-
 
 ## References
 
